@@ -73,7 +73,7 @@ GAMEMODEL.readInput = function(inputobj)
 	
 	if(!keyused)
 	{
-		if(this.generator != null)		keyused = keyused || this.generator.readInput(inputobj);
+		if(this.generator != null)	keyused = keyused || this.generator.readInput(inputobj);
 		else if(this.dungeon != null)	keyused = keyused || this.dungeon.readInput(inputobj);
 	}
 	return keyused;
@@ -167,9 +167,11 @@ GAMEMODEL.buildGenerator = function()
 };
 GAMEMODEL.buildMaze = function()
 {
+	console.log("a");
 	this.buildGenerator();
-	
+	console.log("b");
 	if(this.generator != null)	this.generator.beginMaze();
+	console.log("c");
 };
 
 GAMEMODEL.togglePause = function()
